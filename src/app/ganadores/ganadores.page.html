@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+     
+     <center><img src="https://www.kinglotterysxm.com/wp-content/themes/kinglottery/assets/img/logo.png" class="logo-lotery"></center> 
+
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="notifications-outline" class="icon-header-lotery"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header class="titulo-loteria"><ion-icon name="people-outline"></ion-icon>&nbsp;LISTA DE GANADORES</ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let ganador of ganadores" size="6">
+        <ion-card>
+          <img src="{{ ganador.imagen }}" style="width:100%;" alt="{{ganador.subtitulo}}">
+          <ion-card-header>
+            <ion-card-title>{{ ganador.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ ganador.subtitulo }}
+          </ion-card-content>
+          <ion-item>
+            <ion-label><b style="color: black; font-family:'Courier New', Courier, monospace;">$</b>{{ ganador.ganancia }}</ion-label>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

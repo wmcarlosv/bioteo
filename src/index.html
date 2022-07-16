@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ionic App</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light" />
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <style type="text/css">
+
+   @font-face {
+    font-family: 'Digital Numbers Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Digital Numbers Regular'), url('assets/fonts/DigitalNumbers-Regular.woff') format('woff');
+    }
+
+  .titulo-loteria{border:none; background-color:#005192; color:white;  text-align:left; padding:10px; font-size:1.5em;}
+  .titulo-sorteo{ color:#8f8f8f;font-weight:bold;}
+  .sorteo{ border-bottom:1px solid #ccc;padding:10px;}
+  .sorteo div.imagen-sorteo{float:left; max-width:100px;}
+  .sorteo div.imagen-sorteo img{ width:100%;}
+  .fecha-sorteo{float: right;padding: 5px;background-color: #005192;font-weight: bold;color: white; margin-top:-30px;}
+  .lista-resultado-sorteo{list-style:none;}
+  .logo-lotery{max-width: 100px;}
+  .lista-resultado-sorteo{margin-left: -40px;}
+  .number-tab{display: inline-flex !important; align-items: center !important; justify-content: center !important; background: linear-gradient(to bottom, #fff, #eee) !important;border: 1px solid #eee !important;border-radius: 50% !important;text-align: center !important;font-size: 13px !important;font-weight: 600 !important; height: 40px !important; width: 40px !important;}
+  ion-tab-bar.tab-footer{background-color: #005192;}
+  .tab-button-lotery{background-color: #005192; color: white;}
+  .menu-opciones{background-color: #005192;}
+  .subtitle-resultados{display: block; margin-top: 15px;}
+
+  /*Estilos para el menu de opciones*/
+  .listado-menu-opciones{
+    margin-left: -40px;
+    background-color: #1c6fa5;
+    margin-top: -10px;
+    padding-top: 15px;
+  }
+  .listado-menu-opciones>li
+  {
+      list-style:none;
+      padding: 15px;
+      border-bottom: none;
+      color: white;
+  }
+  .listado-menu-opciones>li ul{
+    padding: 0px;
+    padding: 10px;
+    list-style: none;
+  }
+   .listado-menu-opciones>li ul li div.tab-list
+   {
+      color: #c4181d;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+   }
+
+  .menu-multi-level
+  {
+     background-color: white; 
+     border-top: 4px solid #e4a500;
+     margin-top: 15px;
+  }
+  .listado-sorteos-menu{
+    display: none;
+  }
+  ul.listado-sorteos-menu ul li{
+    color: #444444 !important;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  </style>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

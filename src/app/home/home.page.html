@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+     
+     <center><img src="https://www.kinglotterysxm.com/wp-content/themes/kinglottery/assets/img/logo.png" class="logo-lotery"></center> 
+
+    <ion-buttons slot="end">
+      <ion-select placeholder="Idioma" (ionChange)="cambiarIdioma();">
+        <ion-select-option value="en">Ingles</ion-select-option>
+        <ion-select-option value="fr">Frances</ion-select-option>
+        <ion-select-option value="es">Espanol</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-list *ngFor="let king_lottery of king_lotteries">
+          <ion-list-header class="titulo-loteria">{{ king_lottery.loteria}}</ion-list-header>
+          <ion-item *ngFor="let sorteo of king_lottery.sorteos" (click)="presentModal(sorteo.term_id, sorteo.nombre_sorteo)">
+            <ion-avatar slot="start">
+              <img src="{{ sorteo.imagen_sorteo }}" />
+            </ion-avatar>
+            <ion-label>
+              <h2 class="titulo-sorteo">{{ sorteo.nombre_sorteo }}</h2>
+              <ul [innerHTML]='getNumbers(sorteo.resultados)' class="lista-resultado-sorteo"></ul>
+              <span class="fecha-sorteo">{{ sorteo.fecha_sorteo }}</span>
+            </ion-label>
+          </ion-item>
+  </ion-list>
+
+</ion-content>

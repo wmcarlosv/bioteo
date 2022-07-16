@@ -1,0 +1,40 @@
+<ion-menu contentId="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          <img src="https://www.kinglotterysxm.com/wp-content/themes/kinglottery/assets/img/logo.png" class="logo-lotery">
+          <h3 class="subtitle-resultados" style="float: right;">MENU</h3>
+        </ion-title>
+
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+
+      <ol class="listado-menu-opciones">
+        <li>Loterías <span style="float: right;"><ion-icon name="arrow-forward-outline"></ion-icon></span>
+             <ul class="menu-multi-level">
+              <li *ngFor="let page of pages | keyvalue">
+                <div class="tab-list"><ion-icon name="caret-forward-circle-outline"></ion-icon> {{ page.key }}</div>
+                <ul class="listado-sorteos-menu">
+                  <li *ngFor="let level of page.value | keyvalue">
+                    <span style="color: #00569C; font-weight: bold;">{{ level.key }}</span>
+
+                    <ul>
+                      <li *ngFor="let lottery of level.value" (click)="presentModal(lottery.term_id, lottery.name)">
+                          {{ lottery.name }}
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        </li>
+        <li>King Lottery <span style="float: right;"><ion-icon name="arrow-forward-outline"></ion-icon></span></li>
+        <li>Resultados Anteriores</li>
+        <li>Sorteo en vivo</li>
+        <li>Ganadores</li>
+      </ol>
+
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>

@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+          <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <center><img src="https://www.kinglotterysxm.com/wp-content/themes/kinglottery/assets/img/logo.png" class="logo-lotery"></center> 
+    <ion-buttons slot="end">
+      <ion-button>&nbsp;</ion-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header class="titulo-loteria">{{ nombre_sorteo}}</ion-list-header>
+  
+  <ion-item>
+    <ion-label>Fecha: </ion-label>
+    <ion-input
+      value="{{ date | date: 'yyyy/MM/dd' }}"
+      id="date"
+      class="ion-text-end"
+      placeholder="Ingrese Fecha"
+    ></ion-input>
+    <ion-popover trigger="date" size="cover">
+      <ng-template>
+        <ion-datetime
+          presentation="date"
+          [(ngModel)]="date"
+          locale="sl-SI"
+        ></ion-datetime>
+      </ng-template>
+    </ion-popover>
+    <ion-button slot="end" (click)="findByDate();">Buscar</ion-button>
+  </ion-item>
+
+
+  <ion-item *ngFor="let sorteo of sorteos">
+    <ion-avatar slot="start">
+      <img src="{{ sorteo.imagen_sorteo }}" />
+    </ion-avatar>
+    <ion-label>
+      <h2 class="titulo-sorteo">{{ sorteo.nombre_sorteo }}</h2>
+      <ul [innerHTML]='getNumbers(sorteo.resultados)' class="lista-resultado-sorteo"></ul>
+      <span class="fecha-sorteo">{{ sorteo.fecha_sorteo }}</span>
+    </ion-label>
+  </ion-item>
+</ion-content>

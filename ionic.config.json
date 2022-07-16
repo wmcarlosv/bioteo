@@ -1,0 +1,7 @@
+{
+  "name": "king-lottery",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

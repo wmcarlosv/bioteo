@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+     
+     <center><img src="https://www.kinglotterysxm.com/wp-content/themes/kinglottery/assets/img/logo.png" class="logo-lotery"></center> 
+
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="notifications-outline" class="icon-header-lotery"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
+
+<ion-content>
+  <ion-list-header class="titulo-loteria"><ion-icon name="dice-outline"></ion-icon>&nbsp;SORTEO EN VIVO</ion-list-header>
+  <h4>{{ title }}</h4>
+  <iframe [src]="sanatize('https://www.youtube.com/embed/'+this.id)" width="100%" height="315" frameborder="0"></iframe>
+  <h5>{{ descripcion }}</h5>
+</ion-content>
